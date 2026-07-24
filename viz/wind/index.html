@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Every wind turbine in America — CHARTROOM</title>
+  <meta name="description" content="All 75,000+ US wind turbines on one map. Scrub through 45 years and watch the fleet grow. Data: USGS US Wind Turbine Database." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='%233987e5'/></svg>" />
+  <style>
+    .ramp-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin: 6px 0 4px; }
+    .ramp-bar span { flex: 1; }
+    .ramp-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+  </style>
+  <script type="module" crossorigin src="../../assets/wind-B96Nok9d.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/webgl-device-BR6_QN3I.js">
+  <link rel="modulepreload" crossorigin href="../../assets/geo-PRCIUhik.js">
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="modulepreload" crossorigin href="../../assets/data-filter-extension-KFbZ9Wrs.js">
+  <link rel="modulepreload" crossorigin href="../../assets/mesh-Go2miU2n.js">
+  <link rel="modulepreload" crossorigin href="../../assets/states-10m-OV77SWyF.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div class="viz-stage" id="stage"></div>
+
+  <aside class="panel">
+    <p class="kicker">Energy</p>
+    <h1>Every wind turbine in America</h1>
+    <p class="dek">One glowing point per machine — all <span id="total">75,727</span> of them.
+      Drag the slider to build the fleet year by year, from the first California
+      wind farms of 1981 to today.</p>
+
+    <div class="readout" id="year-readout">2026</div>
+    <div class="readout-sub" id="stats-readout">— turbines · — GW installed</div>
+
+    <div class="controls">
+      <button class="play-btn" id="play" aria-label="Play">▶</button>
+      <input type="range" id="year" min="1981" max="2026" step="1" value="2026" aria-label="Year" />
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Turbine capacity</div>
+      <div class="ramp-bar">
+        <span style="background:var(--wind-1)"></span>
+        <span style="background:var(--wind-2)"></span>
+        <span style="background:var(--wind-3)"></span>
+        <span style="background:var(--wind-4)"></span>
+      </div>
+      <div class="ramp-labels"><span>&lt;1 MW</span><span>2 MW</span><span>≥4 MW</span></div>
+    </div>
+
+    <p class="source">Source: <a href="https://eerscmap.usgs.gov/uswtdb/" target="_blank" rel="noopener">USGS
+      US Wind Turbine Database</a>, updated <span id="updated">—</span>. Turbines with an
+      unrecorded build year are always shown.</p>
+  </aside>
+
+</body>
+</html>

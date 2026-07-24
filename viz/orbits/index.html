@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Everything we've left in orbit — CHARTROOM</title>
+  <meta name="description" content="All 33,000+ tracked objects in Earth orbit on one radial diagram — satellites, rocket bodies, and debris, each ring turning at its true orbital speed." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='none' stroke='%233987e5' stroke-width='7'/><circle cx='50' cy='50' r='16' fill='%233987e5'/></svg>" />
+  <style>
+    #stage { position: fixed; inset: 0; }
+    #stage canvas { display: block; }
+  </style>
+  <script type="module" crossorigin src="../../assets/orbits-B7G6_J0A.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div id="stage"><canvas id="canvas"></canvas></div>
+
+  <aside class="panel">
+    <p class="kicker">Space</p>
+    <h1>Everything we've left in orbit</h1>
+    <p class="dek">All <span id="total">—</span> tracked objects circling Earth right now,
+      placed at their real altitude — and moving at their real relative speed. The dense
+      inner blur is low orbit; the crisp outer ring is geostationary. Tap or hover anything.</p>
+
+    <div class="legend">
+      <div class="legend-row"><span class="swatch dot" style="background:#3987e5"></span> Satellites — <span id="n-pay">—</span></div>
+      <div class="legend-row"><span class="swatch dot" style="background:#c98500"></span> Spent rocket bodies — <span id="n-rb">—</span></div>
+      <div class="legend-row"><span class="swatch dot" style="background:#e66767"></span> Debris &amp; unknown — <span id="n-deb">—</span></div>
+    </div>
+
+    <div class="readout" id="deb-readout">—%</div>
+    <div class="readout-sub">of everything up there is junk</div>
+
+    <p class="source">Source: <a href="https://celestrak.org/" target="_blank" rel="noopener">CelesTrak
+      satellite catalog</a>, fetched <span id="updated">—</span>. Objects plotted at mean
+      altitude; angular speed follows Kepler's third law, time compressed ~220×.</p>
+  </aside>
+
+  <div class="tooltip" id="tooltip"></div>
+</body>
+</html>

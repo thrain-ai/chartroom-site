@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Everything that ever fell from the sky — CHARTROOM</title>
+  <meta name="description" content="Every meteorite humanity has ever recorded — 45,000+ falls and finds on one map, sized by mass, from NASA's snapshot of the Meteoritical Society catalog." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='%23d95926'/></svg>" />
+  <style>
+    .map-wrap { position: relative; margin-top: 8px; overflow-x: auto; }
+    #map { display: block; cursor: crosshair; }
+    .prose a { text-decoration: underline; text-underline-offset: 2px; }
+    .map-controls { display: flex; align-items: center; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
+    .map-controls .readout { font-size: 22px; min-width: 92px; }
+    .map-controls .readout-sub { margin-top: 0; }
+    .map-controls input[type="range"] { flex: 1; min-width: 180px; }
+    .size-note { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+  </style>
+  <style>
+    #stage { display: grid; place-items: center; }
+    #map { display: block; }
+  </style>
+  <script type="module" crossorigin src="../../assets/meteorites-B0VKy9IE.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="modulepreload" crossorigin href="../../assets/mesh-Go2miU2n.js">
+  <link rel="modulepreload" crossorigin href="../../assets/countries-110m-BJOE5Jsa.js">
+  <link rel="modulepreload" crossorigin href="../../assets/naturalEarth1-C6bvIy3W.js">
+  <link rel="modulepreload" crossorigin href="../../assets/src-Dtm4SC7r.js">
+  <link rel="modulepreload" crossorigin href="../../assets/quadtree-DgASQllf.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div class="viz-stage" id="stage"><canvas id="map"></canvas></div>
+
+  <aside class="panel">
+    <p class="kicker">Space</p>
+    <h1>Everything that ever fell from the sky</h1>
+    <p class="dek">We've sent 7,000 rockets up. This is what came down on its own:
+      every meteorite in the scientific record — <span id="total">45,716</span> rocks
+      from space, each dot sized by its mass. The bright embers were seen falling;
+      the blue were found later, sometimes millennia later. Tap or hover any dot.</p>
+    <div class="chips" id="chips" style="margin:10px 0 4px"></div>
+    <div class="controls">
+      <button class="play-btn" id="play" aria-label="Play the record from 1800">▶</button>
+      <input type="range" id="clock" min="1800" max="2013" step="1" value="2013" aria-label="Year" />
+    </div>
+    <div class="readout" id="year-readout" style="margin-top:10px">—</div>
+    <div class="readout-sub" id="count-readout">—</div>
+    <p class="source">Data: <a href="https://data.nasa.gov/dataset/meteorite-landings"
+      target="_blank" rel="noopener">Meteoritical Society via NASA's open-data portal</a>
+      (snapshot ends 2013) · fetched <span id="updated">—</span> · this maps where meteorites
+      were <em>recorded</em>, not where they fell — <span id="nocoords">13,529</span> records
+      lack usable coordinates · deserts and Antarctic ice dominate because that's where dark
+      rocks are easy to spot · dot size grows with the log of mass, pebbles to the 60-tonne Hoba</p>
+    <details class="data-table">
+      <summary>View the data as a table (mapped records per era)</summary>
+      <div style="overflow-x:auto"><table id="era-table"></table></div>
+    </details>
+  </aside>
+
+  <div class="tooltip" id="tooltip"></div>
+</body>
+</html>

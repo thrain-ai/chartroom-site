@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The internet is a wire under the ocean — CHARTROOM</title>
+  <meta name="description" content="All 700+ submarine cables that carry the world's internet, glowing on one dark map. Tap or hover any cable to name it." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='%230aa2a9'/></svg>" />
+  <script type="module" crossorigin src="../../assets/cables-BVikMi0E.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/webgl-device-BR6_QN3I.js">
+  <link rel="modulepreload" crossorigin href="../../assets/geo-PRCIUhik.js">
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="modulepreload" crossorigin href="../../assets/mesh-Go2miU2n.js">
+  <link rel="modulepreload" crossorigin href="../../assets/countries-110m-BJOE5Jsa.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div class="viz-stage" id="stage"></div>
+
+  <aside class="panel">
+    <p class="kicker">Infrastructure</p>
+    <h1>The internet is a wire under the ocean</h1>
+    <p class="dek">Every submarine cable on Earth — <span id="total">717</span> of them.
+      Nearly everything you do online crosses at least one of these fibers, each about
+      as thick as a garden hose. Tap or hover any line to name it; the dots are where they
+      come ashore.</p>
+
+    <div class="legend">
+      <div class="legend-row"><span class="swatch" style="background:linear-gradient(90deg,#256abf,#86b6ef);width:22px"></span> Cables (shade separates neighbors)</div>
+      <div class="legend-row"><span class="swatch dot" style="background:#cde2fb"></span> Landing points</div>
+    </div>
+
+    <div class="readout" id="count-readout">—</div>
+    <div class="readout-sub">landing points connecting every continent but one</div>
+
+    <p class="source">Source: <a href="https://www.submarinecablemap.com" target="_blank"
+      rel="noopener">TeleGeography Submarine Cable Map</a> (© TeleGeography, used with
+      attribution), fetched <span id="updated">—</span>.</p>
+  </aside>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Every ride to orbit — CHARTROOM</title>
+  <meta name="description" content="All 7,000+ orbital launch attempts since Sputnik, one dot each — stacked by year, colored by who flew. Data: GCAT." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='%23e66767'/></svg>" />
+  <style>
+    /* the matrix rises from the viewport floor like a skyline; phones scroll it */
+    #stage { overflow-x: auto; display: grid; align-items: end; justify-items: start; }
+    #chart { display: block; margin-bottom: 10px; }
+    #chart { display: block; }
+  </style>
+  <script type="module" crossorigin src="../../assets/launches-IHI01hDd.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="modulepreload" crossorigin href="../../assets/src-Dtm4SC7r.js">
+  <link rel="modulepreload" crossorigin href="../../assets/quadtree-DgASQllf.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div class="viz-stage stage-scroll" id="stage"><canvas id="chart"></canvas></div>
+
+  <aside class="panel">
+    <p class="kicker">Space</p>
+    <h1>Every ride to orbit</h1>
+    <p class="dek">Each square is one orbital launch attempt — all
+      <span id="total">7,107</span> of them since Sputnik in 1957, stacked by year
+      and colored by who flew. Faded squares never made it. Tap or hover any square
+      for the mission.</p>
+    <div class="chips" id="chips" style="margin:10px 0 4px"></div>
+    <div class="readout" id="headline" style="margin-top:12px">—</div>
+    <div class="readout-sub" id="headline-sub"></div>
+    <p class="source">Data: <a href="https://planet4589.org/space/gcat/" target="_blank"
+      rel="noopener">GCAT, Jonathan McDowell</a> · updated <span id="updated">—</span> ·
+      suborbital flights and static tests excluded · an attempt counts whether or not
+      it reached orbit</p>
+    <details class="data-table" id="table-details">
+      <summary>View the data as a table (launches per year)</summary>
+      <div style="overflow-x:auto"><table id="year-table"></table></div>
+    </details>
+  </aside>
+
+  <div class="tooltip" id="tooltip"></div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Every World Cup goal — CHARTROOM</title>
+  <meta name="description" content="All 3,637 goals from 30 FIFA World Cups — men's and women's, 1930 to 2022 — placed on the minute each was scored. The swarm thickens toward the end of every half: goals come late." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='none' stroke='%233987e5' stroke-width='9'/><circle cx='50' cy='50' r='7' fill='%23c98500'/></svg>" />
+  <style>
+    /* the swarm keeps a minimum width for a legible minute axis; on narrow
+       screens it scrolls inside its own box rather than dragging the page */
+    .chart-wrap { position: relative; margin-top: 8px; overflow-x: auto; }
+    #chart { display: block; height: auto; }
+    /* competition toggle — a plain segmented control (no swatch = it's a filter, not a colour) */
+    .segmented { display: inline-flex; gap: 0; border: 1px solid var(--hairline); border-radius: 999px; overflow: hidden; background: var(--surface); }
+    .segmented button {
+      border: 0; background: transparent; color: var(--ink-2);
+      font-size: 12.5px; font-family: inherit; padding: 6px 14px; cursor: pointer;
+      border-right: 1px solid var(--hairline);
+    }
+    .segmented button:last-child { border-right: 0; }
+    .segmented button.on { background: var(--surface-2); color: var(--ink); }
+    .filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 16px 0 2px; }
+    .filter-row .lbl { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  </style>
+  <style>
+    #chart { display: block; }
+  </style>
+  <script type="module" crossorigin src="../../assets/worldcup-UDrdf9-d.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="modulepreload" crossorigin href="../../assets/src-Dtm4SC7r.js">
+  <link rel="modulepreload" crossorigin href="../../assets/linear-BEI9va8C.js">
+  <link rel="modulepreload" crossorigin href="../../assets/quadtree-DgASQllf.js">
+  <link rel="modulepreload" crossorigin href="../../assets/y-DT_POlSG.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div class="viz-stage" id="stage"><canvas id="chart"></canvas></div>
+
+  <aside class="panel">
+    <p class="kicker">Sport</p>
+    <h1>Every World Cup goal</h1>
+    <p class="dek">All <span id="total">3,637</span> goals from 30 FIFA World Cups — men's and
+      women's, 1930 to 2022 — each dropped onto the <strong>minute</strong> it was scored.
+      The swarm thickens toward the end of every half: goals come late. Tap or hover any dot.</p>
+    <div class="chips" id="chips" style="margin:10px 0 10px"></div>
+    <div class="segmented" id="comp">
+      <button data-c="all" class="on">All</button>
+      <button data-c="men">Men's</button>
+      <button data-c="women">Women's</button>
+    </div>
+    <div class="readout" id="headline" style="margin-top:14px">—</div>
+    <div class="readout-sub" id="headline-sub"></div>
+    <p class="source">Data: <a href="https://github.com/jfjelstul/worldcup" target="_blank"
+      rel="noopener">jfjelstul/worldcup</a>, a tidy mirror of official FIFA match records
+      (CC BY 4.0) · updated <span id="updated">—</span> · stoppage-time goals sit just past
+      45' and 90'; extra time runs out to 120'+ · minutes follow the official record</p>
+    <details class="data-table">
+      <summary>View the data as a table (goals per 15-minute block, by type)</summary>
+      <div style="overflow-x:auto"><table id="block-table"></table></div>
+    </details>
+  </aside>
+
+  <div class="tooltip" id="tooltip"></div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CHARTROOM — a visual feed of the world's data</title>
+  <meta name="description" content="CHARTROOM is a visual feed of the world's data — real datasets, posted as interactive visuals worth staring at." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='none' stroke='%233987e5' stroke-width='9'/></svg>" />
+  <style>
+    .hero-stage {
+      position: relative;
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    #hero-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      display: block;
+      opacity: 0.55;
+    }
+    .hero-veil {
+      position: absolute; inset: 0; z-index: 1;
+      background: radial-gradient(ellipse 640px 380px at 50% 52%, rgba(13,13,13,0.82) 0%, rgba(13,13,13,0.45) 55%, rgba(13,13,13,0) 100%);
+    }
+    .hero-fade {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 200px; z-index: 1;
+      background: linear-gradient(180deg, rgba(13,13,13,0) 0%, rgba(13,13,13,0.6) 55%, var(--bg) 100%);
+      pointer-events: none;
+    }
+    .hero-copy { position: relative; z-index: 2; text-align: center; max-width: 640px; padding: 0 28px; }
+    .hero-copy h1 { font-size: clamp(38px, 5.2vw, 64px); line-height: 1.0; letter-spacing: -0.03em; margin: 14px 0 18px; }
+    .hero-copy .down {
+      margin-top: 28px; font-size: 12px; color: var(--muted);
+      letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+      animation: sink 2.6s ease-in-out infinite;
+    }
+    @keyframes sink { 0%, 100% { transform: translateY(0); opacity: 0.7; } 50% { transform: translateY(5px); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .hero-copy .down { animation: none; } }
+  </style>
+  <script type="module" crossorigin src="./assets/main-DdH6xIWw.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="./assets/heroes-HDR36CMC.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="./"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="./" class="active">Feed</a>
+      <a href="./about/">About</a>
+    </div>
+  </nav>
+
+  <header class="hero-stage">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="kicker">Chartroom</p>
+      <h1>A visual feed of<br />the world's data.</h1>
+      <p class="down">↓ Start exploring</p>
+    </div>
+  </header>
+
+  <div class="social-layout">
+    <aside class="rail rail-left" id="rail-left">
+      <div class="rail-card">
+        <p class="rail-title">Channels</p>
+        <div id="channel-list"></div>
+      </div>
+    </aside>
+
+    <main class="feed-col">
+      <div class="tabs" id="tabs">
+        <button class="tab on" data-tab="all">Feed</button>
+      </div>
+      <div class="feed" id="feed">
+
+        <article class="post" data-id="meteorites" data-channel="space" data-date="2026-07-19">
+          <a class="motif" id="motif-meteorites" href="./viz/meteorites/" aria-label="Everything that ever fell from the sky"></a>
+          <div class="body">
+            <h2><a href="./viz/meteorites/">Everything that ever fell from the sky</a></h2>
+            <p class="dek">Every meteorite humanity has ever recorded — 45,716 space rocks
+              on one map, sized by mass. The embers were seen falling; the rest were found
+              where people bothered to look.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-meteorites">—</b> meteorites · <span id="stat-meteorites-fell">—</span> seen falling</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="worldcup" data-channel="sport" data-date="2026-07-19">
+          <a class="motif" id="motif-worldcup" href="./viz/worldcup/" aria-label="Every World Cup goal"></a>
+          <div class="body">
+            <h2><a href="./viz/worldcup/">Every World Cup goal</a></h2>
+            <p class="dek">All 3,637 goals from 30 World Cups — men's and women's, 1930 to 2022 —
+              set on the minute they were scored. The swarm thickens toward every whistle.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-worldcup">—</b> goals · <span id="stat-worldcup-span">—</span></span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+
+
+
+        <article class="post" data-id="storms" data-channel="weather" data-date="2026-07-19">
+          <a class="motif" id="motif-storms" href="./viz/storms/" aria-label="Forty-five years of hurricanes"></a>
+          <div class="body">
+            <h2><a href="./viz/storms/">Forty-five years of hurricanes</a></h2>
+            <p class="dek">Every tropical cyclone tracked since 1980, drawn as one glowing
+              atlas of storm paths — brighter where the wind blew harder.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-storms">—</b> storms since 1980</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="orbits" data-channel="space" data-date="2026-07-19">
+          <a class="motif" id="motif-orbits" href="./viz/orbits/" aria-label="Everything we've left in orbit"></a>
+          <div class="body">
+            <h2><a href="./viz/orbits/">Everything we've left in orbit</a></h2>
+            <p class="dek">All 33,000+ tracked objects circling Earth at their real altitudes,
+              each ring turning at its true orbital speed. Much of it is junk.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-orbits">—</b> objects · <span id="stat-orbits-junk">—</span>% junk</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="nukes" data-channel="history" data-date="2026-07-19">
+          <a class="motif" id="motif-nukes" href="./viz/nukes/" aria-label="Every nuclear explosion"></a>
+          <div class="body">
+            <h2><a href="./viz/nukes/">Every nuclear explosion</a></h2>
+            <p class="dek">From Trinity to North Korea — 2,057 detonations as a swarm of
+              bubbles sized by yield. Watch the giants vanish underground after 1963.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-nukes">—</b> detonations, 1945–2017</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="cables" data-channel="infrastructure" data-date="2026-07-18">
+          <a class="motif" id="motif-cables" href="./viz/cables/" aria-label="The internet is a wire under the ocean"></a>
+          <div class="body">
+            <h2><a href="./viz/cables/">The internet is a wire under the ocean</a></h2>
+            <p class="dek">All 717 submarine cables that carry the world's traffic, glowing
+              across the seafloor. Hover any fiber to learn its name.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-cables">—</b> cables · <span id="stat-cables-lp">—</span> landing points</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="ukraine" data-channel="conflict" data-date="2026-07-18">
+          <a class="motif" id="motif-ukraine" href="./viz/ukraine/" aria-label="Eleven years of war in Ukraine"></a>
+          <div class="body">
+            <h2><a href="./viz/ukraine/">Eleven years of war in Ukraine</a></h2>
+            <p class="dek">Every violent event recorded by the Uppsala Conflict Data Program
+              since 2014. The Donbas line smolders for eight years — then 2022 happens.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-ukraine">—</b> recorded events since 2014</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="climate" data-channel="climate" data-date="2026-07-18">
+          <a class="motif" id="motif-climate" href="./viz/climate/" aria-label="The temperature spiral"></a>
+          <div class="body">
+            <h2><a href="./viz/climate/">The temperature spiral</a></h2>
+            <p class="dek">147 years of monthly global temperature drawn as one continuous
+              line circling the calendar — spiraling outward as the world warms.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-climate">—</b> °C above the 1951–80 average</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="energy" data-channel="energy" data-date="2026-07-18">
+          <a class="motif" id="motif-energy" href="./viz/energy/" aria-label="How the world makes electricity"></a>
+          <div class="body">
+            <h2><a href="./viz/energy/">How the world makes electricity</a></h2>
+            <p class="dek">Forty years of global generation, layer by layer — the fossil base
+              that never shrinks, and the wind-and-solar wedge arriving fast on top.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-energy">—</b>% of world power is now wind + solar</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="wind" data-channel="energy" data-date="2026-07-18">
+          <a class="motif" id="motif-wind" href="./viz/wind/" aria-label="Every wind turbine in America"></a>
+          <div class="body">
+            <h2><a href="./viz/wind/">Every wind turbine in America</a></h2>
+            <p class="dek">Four and a half decades of the US wind fleet, one glowing point per
+              machine. Scrub through time and watch it grow.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-wind">75,727</b> turbines · <span id="stat-wind-gw">—</span> GW</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="quakes" data-channel="earth" data-date="2026-07-18">
+          <a class="motif" id="motif-quakes" href="./viz/quakes/" aria-label="The planet is always moving"></a>
+          <div class="body">
+            <h2><a href="./viz/quakes/">The planet is always moving</a></h2>
+            <p class="dek">Every earthquake of magnitude 1+ from the last 30 days, sized by
+              energy, colored by depth. Refreshed daily — never the same twice.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-quakes">—</b> quakes · biggest M<span id="stat-quakes-max">—</span></span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="launches" data-channel="space" data-date="2026-07-18">
+          <a class="motif" id="motif-launches" href="./viz/launches/" aria-label="Every ride to orbit"></a>
+          <div class="body">
+            <h2><a href="./viz/launches/">Every ride to orbit</a></h2>
+            <p class="dek">All 7,100+ orbital launch attempts since Sputnik, one square each —
+              the Cold War wall, the quiet 90s, the commercial explosion at the edge.</p>
+            <div class="post-footer">
+              <span class="stat"><b id="stat-launches">—</b> launches · <span id="stat-launches-year">—</span> this year</span>
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <p class="feed-empty" id="feed-empty" hidden>Nothing in this channel yet.</p>
+    </main>
+
+    <aside class="rail rail-right" id="rail-right">
+      <div class="rail-card">
+        <p class="rail-title">Trending</p>
+        <div id="now-stats"></div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer" style="max-width:1160px;margin:0 auto;padding:30px 28px 40px">
+    <span>Data: USGS · NOAA · NASA · GCAT · UCDP · OWID · CelesTrak · TeleGeography · SIPRI · Meteoritical Society</span>
+    <span>New posts daily · <a href="./about/">about CHARTROOM</a></span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+</body>
+</html>

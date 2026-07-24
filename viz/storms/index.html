@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forty-five years of hurricanes — CHARTROOM</title>
+  <meta name="description" content="Every tropical cyclone tracked since 1980 — nearly 5,000 storms drawn as glowing tracks, colored by intensity. NOAA IBTrACS data." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='%23f07f3c'/></svg>" />
+  <style>
+    .ramp-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin: 6px 0 4px; }
+    .ramp-bar span { flex: 1; }
+    .ramp-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+  </style>
+  <script type="module" crossorigin src="../../assets/storms-CVSblYpo.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/webgl-device-BR6_QN3I.js">
+  <link rel="modulepreload" crossorigin href="../../assets/geo-PRCIUhik.js">
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="modulepreload" crossorigin href="../../assets/mesh-Go2miU2n.js">
+  <link rel="modulepreload" crossorigin href="../../assets/countries-110m-BJOE5Jsa.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div class="viz-stage" id="stage"></div>
+
+  <aside class="panel">
+    <p class="kicker">Weather</p>
+    <h1>Forty-five years of hurricanes</h1>
+    <p class="dek">Every tropical cyclone tracked since 1980 — <span id="total">—</span>
+      storms drawn as one glowing atlas. The brighter the line, the harder the wind was
+      blowing. Tap or hover any track to name the storm.</p>
+
+    <div class="legend">
+      <div class="legend-title">Peak wind along track</div>
+      <div class="ramp-bar">
+        <span style="background:#8f3f14"></span>
+        <span style="background:#b5541c"></span>
+        <span style="background:#d95926"></span>
+        <span style="background:#f07f3c"></span>
+        <span style="background:#ffb37a"></span>
+      </div>
+      <div class="ramp-labels"><span>Depression</span><span>Hurricane</span><span>Category 5</span></div>
+    </div>
+
+    <div class="readout" id="pts-readout">—</div>
+    <div class="readout-sub">six-hourly track positions</div>
+
+    <p class="source">Source: <a href="https://www.ncei.noaa.gov/products/international-best-track-archive"
+      target="_blank" rel="noopener">NOAA IBTrACS</a> v04r01, satellite era (1980→), updated
+      <span id="updated">—</span>.</p>
+  </aside>
+
+</body>
+</html>

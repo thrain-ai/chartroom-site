@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The planet is always moving — CHARTROOM</title>
+  <meta name="description" content="Every earthquake of magnitude 1+ in the last 30 days, on one dark map. Sized by energy, colored by depth. Data: USGS." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='%2358d3a5'/></svg>" />
+  <script type="module" crossorigin src="../../assets/quakes-4jZctZge.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/webgl-device-BR6_QN3I.js">
+  <link rel="modulepreload" crossorigin href="../../assets/geo-PRCIUhik.js">
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="modulepreload" crossorigin href="../../assets/data-filter-extension-KFbZ9Wrs.js">
+  <link rel="modulepreload" crossorigin href="../../assets/mesh-Go2miU2n.js">
+  <link rel="modulepreload" crossorigin href="../../assets/countries-110m-BJOE5Jsa.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div class="viz-stage" id="stage"></div>
+
+  <aside class="panel">
+    <p class="kicker">Earth</p>
+    <h1>The planet is always moving</h1>
+    <p class="dek">Every earthquake of magnitude 1+ recorded worldwide in the last 30 days —
+      <span id="total">—</span> of them. Press play to relive the month; the bright ones
+      happened in the last 24 hours of the clock.</p>
+
+    <div class="readout" id="time-readout">—</div>
+    <div class="readout-sub" id="stats-readout">—</div>
+
+    <div class="controls">
+      <button class="play-btn" id="play" aria-label="Play">▶</button>
+      <input type="range" id="clock" min="0" max="720" step="1" value="720" aria-label="Time" />
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Depth</div>
+      <div class="legend-row"><span class="swatch dot" style="background:var(--depth-shallow)"></span> Shallow — under 70 km</div>
+      <div class="legend-row"><span class="swatch dot" style="background:var(--depth-mid)"></span> Intermediate — 70–300 km</div>
+      <div class="legend-row"><span class="swatch dot" style="background:var(--depth-deep)"></span> Deep — over 300 km</div>
+      <div class="legend-row" style="margin-top:4px;color:var(--muted)">Circle area scales with energy released</div>
+    </div>
+
+    <p class="dek" id="biggest" style="margin-top:10px"></p>
+
+    <p class="source">Source: <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php"
+      target="_blank" rel="noopener">USGS real-time feeds</a>, updated <span id="updated">—</span>.</p>
+  </aside>
+
+</body>
+</html>

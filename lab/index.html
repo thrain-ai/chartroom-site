@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hero lab — CHARTROOM</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='none' stroke='%233987e5' stroke-width='9'/></svg>" />
+  <style>
+    body { overflow: hidden; }
+    #stage { position: fixed; inset: 0; }
+    .lab-bar {
+      position: fixed; top: 64px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 30; flex-wrap: wrap; justify-content: center;
+      padding: 0 12px;
+    }
+    .lab-title {
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+      z-index: 30; text-align: center; pointer-events: none;
+    }
+    .lab-title .name { font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+    .lab-title .hint { font-size: 12px; color: var(--muted); margin-top: 3px; }
+    .chip.on { border-color: var(--accent); color: var(--ink); }
+  </style>
+  <script type="module" crossorigin src="../assets/lab-DwRthzWl.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../assets/heroes-HDR36CMC.js">
+  <link rel="modulepreload" crossorigin href="../assets/mesh-Go2miU2n.js">
+  <link rel="modulepreload" crossorigin href="../assets/states-10m-OV77SWyF.js">
+  <link rel="modulepreload" crossorigin href="../assets/naturalEarth1-C6bvIy3W.js">
+  <link rel="modulepreload" crossorigin href="../assets/src-Dtm4SC7r.js">
+  <link rel="stylesheet" crossorigin href="../assets/style-D42SVu99.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CHARTROOM">
+  <circle cx="17" cy="17" r="15.2" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.6"/>
+  <polyline points="9,23 14,15.5 18,19 25.5,9.5" fill="none" stroke="#3987e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="23" r="2" fill="#0aa2a9"/>
+  <circle cx="14" cy="15.5" r="2" fill="#3987e5"/>
+  <circle cx="18" cy="19" r="2" fill="#86b6ef"/>
+  <circle cx="25.5" cy="9.5" r="2.5" fill="#cde2fb"/>
+</svg></a>
+    <div class="links"><a href="../">Feed</a><span style="color:var(--muted);font-size:13.5px">Hero lab — pick your favorites</span></div>
+  </nav>
+
+  <div id="stage"><canvas id="canvas"></canvas></div>
+
+  <div class="lab-bar" id="bar"></div>
+  <div class="lab-title">
+    <div class="name" id="mode-name">—</div>
+    <div class="hint">← → step through · keys 1–9 0 − = jump · A auto-cycles</div>
+  </div>
+
+</body>
+</html>
