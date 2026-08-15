@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>charts</title>
+    <link>https://charts.thrain.ai/</link>
+    <description>A visual feed of the world's data — real datasets, posted as interactive visuals worth staring at.</description>
+    <language>en</language>
+    <atom:link href="https://charts.thrain.ai/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Totality is a thin ribbon</title>
+      <link>https://charts.thrain.ai/viz/eclipses/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/eclipses/</guid>
+      <pubDate>Sat, 08 Aug 2026 12:00:00 GMT</pubDate>
+      <category>space</category>
+      <description>The Moon&apos;s shadow falls on Earth often. The part of it that blots the Sun out completely is a band a few hundred kilometres across, and it lands on any one place rarely. Here are the 67 tabulated paths of this century on a globe you can spin, drawn at NASA&apos;s real width rather than one thickened to be seen — thin almost everywhere, flaring only where the shadow arrives at sunrise and leaves at sunset. Play the century and they light in date order, ending on 12 August 2026: over Greenland, clipping Iceland, out over Spain at sunset.</description>
+      <media:content url="https://charts.thrain.ai/og/eclipses.png" medium="image" />
+    </item>
+    <item>
+      <title>Europe burns in bad years</title>
+      <link>https://charts.thrain.ai/viz/fires/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/fires/</guid>
+      <pubDate>Thu, 06 Aug 2026 12:00:00 GMT</pubDate>
+      <category>climate</category>
+      <description>Forty-five fire seasons in the five Mediterranean countries EFFIS has recorded without a break since 1980, stacked one year at a time. The shape is not a slope, it is a skyline: ordinary summers have been getting smaller since the 1980s, and the catastrophes have not moved — 1985 and 2017 still stand almost level. Pull a country out of the stack and its own bad years step forward.</description>
+      <media:content url="https://charts.thrain.ai/og/fires.png" medium="image" />
+    </item>
+    <item>
+      <title>The sky is full of clocks</title>
+      <link>https://charts.thrain.ai/viz/pulsars/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/pulsars/</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 GMT</pubDate>
+      <category>space</category>
+      <description>Pulsars are the most precise natural clocks in the universe — dead neutron stars sweeping a beam past Earth on a fixed period. Here is every one we&apos;ve measured, drawn on the galactic sky and blinking at its real spin: millisecond pulsars flicker almost too fast to follow, second-long ones pulse slow and heavy. Drag to keep only the fastest and the sky thins to the millisecond swarms.</description>
+      <media:content url="https://charts.thrain.ai/og/pulsars.png" medium="image" />
+    </item>
+    <item>
+      <title>A century of storms hitting Earth</title>
+      <link>https://charts.thrain.ai/viz/geostorms/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/geostorms/</guid>
+      <pubDate>Sun, 02 Aug 2026 12:00:00 GMT</pubDate>
+      <category>space</category>
+      <description>The Sun&apos;s spots are one thing; the disturbance they hurl at us is another. The planetary Kp index has logged Earth&apos;s geomagnetic weather every three hours since 1932. Feel it through a compass needle: quiet years barely stir it, the eleven-year cycle breathes in the baseline, and the great storms — the 1989 blackout, the 2003 Halloween storms, 2024&apos;s Gannon event — swing it to the pin and flood the sky green.</description>
+      <media:content url="https://charts.thrain.ai/og/geostorms.png" medium="image" />
+    </item>
+    <item>
+      <title>The Loop</title>
+      <link>https://charts.thrain.ai/viz/tdf/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/tdf/</guid>
+      <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
+      <category>history</category>
+      <description>Every stage of every Tour de France since 1903, drawn as one route object. Press play and the race writes itself across France — the early point-to-point giants reaching clear across the country, the hexagon settling in through the middle century, the modern loops that dart abroad for a Grand Départ. A hundred and twenty-three editions, overlaid, become the shape of the race itself.</description>
+      <media:content url="https://charts.thrain.ai/og/tdf.png" medium="image" />
+    </item>
+    <item>
+      <title>Seventy-five years of American tornadoes</title>
+      <link>https://charts.thrain.ai/viz/tornadoes/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/tornadoes/</guid>
+      <pubDate>Sun, 26 Jul 2026 12:00:00 GMT</pubDate>
+      <category>weather</category>
+      <description>Every tornado NOAA logged since 1950 — more than 73,000 of them, each drawn from touchdown to lift-off and colored by strength. Press play and three-quarters of a century accretes: the haze of weak twisters, the deep-red spokes of the violent few, and the shape of Tornado Alley emerging from the count.</description>
+      <media:content url="https://charts.thrain.ai/og/tornadoes.png" medium="image" />
+    </item>
+    <item>
+      <title>The tide is not one thing</title>
+      <link>https://charts.thrain.ai/viz/tides/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/tides/</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <category>earth</category>
+      <description>A year of tides at six American harbours, each day drawn as one petal on a 24-hour clock. Anchorage heaves eleven metres; Honolulu barely breathes. Same ocean, same moon — completely different signatures.</description>
+      <media:content url="https://charts.thrain.ai/og/tides.png" medium="image" />
+    </item>
+    <item>
+      <title>The days nobody is born</title>
+      <link>https://charts.thrain.ai/viz/births/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/births/</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <category>history</category>
+      <description>Twenty-one years of American birth records on a calendar, with the weekend effect divided out. Christmas Day runs 41% below an ordinary day, the 13th of the month dips every time, and mid-September glows. Birth is scheduled now, and it shows.</description>
+      <media:content url="https://charts.thrain.ai/og/births.png" medium="image" />
+    </item>
+    <item>
+      <title>Rivers keep time</title>
+      <link>https://charts.thrain.ai/viz/rivers/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/rivers/</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <category>earth</category>
+      <description>Six American rivers drawn as a single year each. The Willamette peaks in January, the Yellowstone in June when the snowpack goes. And the Colorado below Glen Canyon Dam barely has a year at all — we switched its seasons off in 1963.</description>
+      <media:content url="https://charts.thrain.ai/og/rivers.png" medium="image" />
+    </item>
+    <item>
+      <title>The Sun draws butterflies</title>
+      <link>https://charts.thrain.ai/viz/sunspots/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/sunspots/</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <category>space</category>
+      <description>Plot sunspots by the latitude they appear at and a pattern nobody designed comes out: every eleven years a cycle opens near 30°, marches to the equator, and dies there as the next one opens above it. A century and a half of it, rotation by rotation.</description>
+      <media:content url="https://charts.thrain.ai/og/sunspots.png" medium="image" />
+    </item>
+    <item>
+      <title>Ten thousand years of eruptions</title>
+      <link>https://charts.thrain.ai/viz/eruptions/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/eruptions/</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <category>earth</category>
+      <description>The planet is never quiet. Put every eruption the Smithsonian has a record of on one map — colored and sized by explosivity — and press play, and the whole restless Earth lights up through deep time: the gentle lava fields, and the handful of cataclysms that darkened whole skies.</description>
+      <media:content url="https://charts.thrain.ai/og/eruptions.png" medium="image" />
+    </item>
+    <item>
+      <title>Every world we&apos;ve ever found</title>
+      <link>https://charts.thrain.ai/viz/exoplanets/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/exoplanets/</guid>
+      <pubDate>Fri, 24 Jul 2026 12:00:00 GMT</pubDate>
+      <category>space</category>
+      <description>Every confirmed planet beyond the Sun — 6,000-plus worlds on one turning field, each orbiting at its true relative speed, placed by how long its year is and colored by how we found it. The inner blur is our blind spot made visible.</description>
+      <media:content url="https://charts.thrain.ai/og/exoplanets.png" medium="image" />
+    </item>
+    <item>
+      <title>Every nuclear explosion</title>
+      <link>https://charts.thrain.ai/viz/nukes/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/nukes/</guid>
+      <pubDate>Sun, 19 Jul 2026 12:00:00 GMT</pubDate>
+      <category>history</category>
+      <description>From Trinity to North Korea — 2,057 detonations as a swarm of bubbles sized by yield. Watch the giants vanish underground after 1963.</description>
+      <media:content url="https://charts.thrain.ai/og/nukes.png" medium="image" />
+    </item>
+    <item>
+      <title>Everything we&apos;ve left in orbit</title>
+      <link>https://charts.thrain.ai/viz/orbits/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/orbits/</guid>
+      <pubDate>Sun, 19 Jul 2026 12:00:00 GMT</pubDate>
+      <category>space</category>
+      <description>All 33,000+ tracked objects circling Earth at their real altitudes, each ring turning at its true orbital speed. Much of it is junk.</description>
+      <media:content url="https://charts.thrain.ai/og/orbits.png" medium="image" />
+    </item>
+    <item>
+      <title>Forty-five years of hurricanes</title>
+      <link>https://charts.thrain.ai/viz/storms/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/storms/</guid>
+      <pubDate>Sun, 19 Jul 2026 12:00:00 GMT</pubDate>
+      <category>weather</category>
+      <description>Every tropical cyclone tracked since 1980, drawn as one glowing atlas of storm paths — brighter where the wind blew harder.</description>
+      <media:content url="https://charts.thrain.ai/og/storms.png" medium="image" />
+    </item>
+    <item>
+      <title>Every World Cup goal</title>
+      <link>https://charts.thrain.ai/viz/worldcup/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/worldcup/</guid>
+      <pubDate>Sun, 19 Jul 2026 12:00:00 GMT</pubDate>
+      <category>sport</category>
+      <description>All 3,637 goals from 30 World Cups — men&apos;s and women&apos;s, 1930 to 2022 — set on the minute they were scored. The swarm thickens toward every whistle.</description>
+      <media:content url="https://charts.thrain.ai/og/worldcup.png" medium="image" />
+    </item>
+    <item>
+      <title>Everything that ever fell from the sky</title>
+      <link>https://charts.thrain.ai/viz/meteorites/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/meteorites/</guid>
+      <pubDate>Sun, 19 Jul 2026 12:00:00 GMT</pubDate>
+      <category>space</category>
+      <description>Every meteorite humanity has ever recorded — 45,716 space rocks on one map, sized by mass. The embers were seen falling; the rest were found where people bothered to look.</description>
+      <media:content url="https://charts.thrain.ai/og/meteorites.png" medium="image" />
+    </item>
+    <item>
+      <title>Every ride to orbit</title>
+      <link>https://charts.thrain.ai/viz/launches/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/launches/</guid>
+      <pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <category>space</category>
+      <description>All 7,100+ orbital launch attempts since Sputnik, one square each — the Cold War wall, the quiet 90s, the commercial explosion at the edge.</description>
+      <media:content url="https://charts.thrain.ai/og/launches.png" medium="image" />
+    </item>
+    <item>
+      <title>The planet is always moving</title>
+      <link>https://charts.thrain.ai/viz/quakes/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/quakes/</guid>
+      <pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <category>earth</category>
+      <description>Every earthquake of magnitude 1+ from the last 30 days, sized by energy, colored by depth. Refreshed daily — never the same twice.</description>
+      <media:content url="https://charts.thrain.ai/og/quakes.png" medium="image" />
+    </item>
+    <item>
+      <title>Every wind turbine in America</title>
+      <link>https://charts.thrain.ai/viz/wind/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/wind/</guid>
+      <pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <category>energy</category>
+      <description>Four and a half decades of the US wind fleet, one glowing point per machine. Scrub through time and watch it grow.</description>
+      <media:content url="https://charts.thrain.ai/og/wind.png" medium="image" />
+    </item>
+    <item>
+      <title>How the world makes electricity</title>
+      <link>https://charts.thrain.ai/viz/energy/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/energy/</guid>
+      <pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <category>energy</category>
+      <description>Forty years of global generation, layer by layer — the fossil base that never shrinks, and the wind-and-solar wedge arriving fast on top.</description>
+      <media:content url="https://charts.thrain.ai/og/energy.png" medium="image" />
+    </item>
+    <item>
+      <title>The temperature spiral</title>
+      <link>https://charts.thrain.ai/viz/climate/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/climate/</guid>
+      <pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <category>climate</category>
+      <description>147 years of monthly global temperature drawn as one continuous line circling the calendar — spiraling outward as the world warms.</description>
+      <media:content url="https://charts.thrain.ai/og/climate.png" medium="image" />
+    </item>
+    <item>
+      <title>Eleven years of war in Ukraine</title>
+      <link>https://charts.thrain.ai/viz/ukraine/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/ukraine/</guid>
+      <pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <category>conflict</category>
+      <description>Every violent event recorded by the Uppsala Conflict Data Program since 2014. The Donbas line smolders for eight years — then 2022 happens.</description>
+      <media:content url="https://charts.thrain.ai/og/ukraine.png" medium="image" />
+    </item>
+    <item>
+      <title>The internet is a wire under the ocean</title>
+      <link>https://charts.thrain.ai/viz/cables/</link>
+      <guid isPermaLink="true">https://charts.thrain.ai/viz/cables/</guid>
+      <pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <category>infrastructure</category>
+      <description>All 717 submarine cables that carry the world&apos;s traffic, glowing across the seafloor. Hover any fiber to learn its name.</description>
+      <media:content url="https://charts.thrain.ai/og/cables.png" medium="image" />
+    </item>
+  </channel>
+</rss>

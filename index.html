@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>charts — a visual feed of the world's data</title>
+  <meta name="description" content="charts is a visual feed of the world's data — real datasets, posted as interactive visuals worth staring at." />
+  <link rel="icon" href="./favicon.svg" />
+  <style>
+    .hero-stage {
+      position: relative;
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    #hero-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      display: block;
+      opacity: 0.55;
+    }
+    .hero-veil {
+      position: absolute; inset: 0; z-index: 1;
+      background: radial-gradient(ellipse 640px 380px at 50% 52%, rgba(13,13,13,0.82) 0%, rgba(13,13,13,0.45) 55%, rgba(13,13,13,0) 100%);
+    }
+    .hero-fade {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 200px; z-index: 1;
+      background: linear-gradient(180deg, rgba(13,13,13,0) 0%, rgba(13,13,13,0.6) 55%, var(--bg) 100%);
+      pointer-events: none;
+    }
+    .hero-copy { position: relative; z-index: 2; text-align: center; max-width: 640px; padding: 0 28px; }
+    .hero-copy h1 { font-size: clamp(38px, 5.2vw, 64px); line-height: 1.0; letter-spacing: -0.03em; margin: 14px 0 18px; }
+    .hero-copy .down {
+      margin-top: 28px; font-size: 12px; color: var(--muted);
+      letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+      animation: sink 2.6s ease-in-out infinite;
+    }
+    @keyframes sink { 0%, 100% { transform: translateY(0); opacity: 0.7; } 50% { transform: translateY(5px); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .hero-copy .down { animation: none; } }
+  </style>
+  <script type="module" crossorigin src="./assets/main-i4x9eM-k.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="./assets/heroes-DVUpAYwH.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-BoNt4oFf.css">
+  <link rel="canonical" href="https://charts.thrain.ai/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="charts">
+  <meta property="og:url" content="https://charts.thrain.ai/">
+  <meta property="og:title" content="charts">
+  <meta property="og:description" content="A visual feed of the world&#39;s data — real datasets, posted as interactive visuals worth staring at.">
+  <meta property="og:image" content="https://charts.thrain.ai/og/home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="charts">
+  <meta name="twitter:description" content="A visual feed of the world&#39;s data — real datasets, posted as interactive visuals worth staring at.">
+  <meta name="twitter:image" content="https://charts.thrain.ai/og/home.png">
+  <link rel="alternate" type="application/rss+xml" title="charts — new posts" href="https://charts.thrain.ai/feed.xml">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="./"><svg class="mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="charts"><circle cx="16.00" cy="16.00" r="0.52" fill="#256abf"/><circle cx="14.81" cy="17.09" r="0.53" fill="#256abf"/><circle cx="16.20" cy="13.73" r="0.55" fill="#256abf"/><circle cx="17.70" cy="18.22" r="0.56" fill="#256abf"/><circle cx="12.82" cy="15.44" r="0.57" fill="#256abf"/><circle cx="19.05" cy="14.06" r="0.58" fill="#256abf"/><circle cx="14.97" cy="19.82" r="0.60" fill="#256abf"/><circle cx="14.03" cy="12.21" r="0.61" fill="#256abf"/><circle cx="20.29" cy="17.57" r="0.62" fill="#256abf"/><circle cx="11.52" cy="17.85" r="0.63" fill="#256abf"/><circle cx="18.16" cy="11.38" r="0.65" fill="#256abf"/><circle cx="17.60" cy="21.11" r="0.66" fill="#256abf"/><circle cx="11.16" cy="13.20" r="0.67" fill="#256abf"/><circle cx="21.68" cy="14.75" r="0.68" fill="#256abf"/><circle cx="12.53" cy="20.94" r="0.70" fill="#256abf"/><circle cx="15.20" cy="9.80" r="0.71" fill="#3987e5"/><circle cx="20.94" cy="20.16" r="0.72" fill="#3987e5"/><circle cx="9.35" cy="16.27" r="0.74" fill="#3987e5"/><circle cx="20.85" cy="11.17" r="0.75" fill="#3987e5"/><circle cx="15.68" cy="23.03" r="0.76" fill="#3987e5"/><circle cx="11.38" cy="10.46" r="0.77" fill="#3987e5"/><circle cx="23.33" cy="16.99" r="0.79" fill="#3987e5"/><circle cx="9.79" cy="20.32" r="0.80" fill="#3987e5"/><circle cx="17.70" cy="8.45" r="0.81" fill="#3987e5"/><circle cx="19.93" cy="22.86" r="0.82" fill="#3987e5"/><circle cx="8.31" cy="13.55" r="0.84" fill="#3987e5"/><circle cx="23.47" cy="12.55" r="0.85" fill="#3987e5"/><circle cx="12.76" cy="23.74" r="0.86" fill="#3987e5"/><circle cx="13.11" cy="7.96" r="0.87" fill="#3987e5"/><circle cx="23.69" cy="20.04" r="0.89" fill="#5598e7"/><circle cx="7.45" cy="18.25" r="0.90" fill="#5598e7"/><circle cx="20.86" cy="8.44" r="0.91" fill="#5598e7"/><circle cx="17.55" cy="25.00" r="0.93" fill="#5598e7"/><circle cx="8.67" cy="10.32" r="0.94" fill="#5598e7"/><circle cx="25.38" cy="15.22" r="0.95" fill="#5598e7"/><circle cx="9.52" cy="23.01" r="0.96" fill="#5598e7"/><circle cx="16.05" cy="6.32" r="0.98" fill="#5598e7"/><circle cx="22.60" cy="23.27" r="0.99" fill="#5598e7"/><circle cx="6.09" cy="15.08" r="1.00" fill="#5598e7"/><circle cx="24.03" cy="9.91" r="1.01" fill="#5598e7"/><circle cx="14.17" cy="26.04" r="1.03" fill="#5598e7"/><circle cx="10.50" cy="7.25" r="1.04" fill="#5598e7"/><circle cx="26.09" cy="18.76" r="1.05" fill="#5598e7"/><circle cx="6.58" cy="20.83" r="1.07" fill="#86b6ef"/><circle cx="19.72" cy="5.96" r="1.08" fill="#86b6ef"/><circle cx="20.08" cy="26.03" r="1.09" fill="#86b6ef"/><circle cx="6.11" cy="11.31" r="1.10" fill="#86b6ef"/><circle cx="26.57" cy="12.74" r="1.12" fill="#86b6ef"/><circle cx="10.35" cy="25.65" r="1.13" fill="#86b6ef"/><circle cx="13.63" cy="4.95" r="1.14" fill="#86b6ef"/><circle cx="25.30" cy="22.61" r="1.15" fill="#86b6ef"/><circle cx="4.56" cy="17.43" r="1.17" fill="#86b6ef"/><circle cx="23.54" cy="7.14" r="1.18" fill="#86b6ef"/><circle cx="16.43" cy="27.74" r="1.19" fill="#86b6ef"/><circle cx="7.67" cy="7.55" r="1.20" fill="#86b6ef"/><circle cx="27.95" cy="16.61" r="1.22" fill="#86b6ef"/><circle cx="6.69" cy="23.69" r="1.23" fill="#86b6ef"/><circle cx="17.68" cy="3.93" r="1.24" fill="#cde2fb"/><circle cx="22.97" cy="26.12" r="1.26" fill="#cde2fb"/><circle cx="3.92" cy="13.22" r="1.27" fill="#cde2fb"/><circle cx="26.88" cy="9.84" r="1.28" fill="#cde2fb"/><circle cx="12.11" cy="27.99" r="1.29" fill="#cde2fb"/><circle cx="10.73" cy="4.44" r="1.31" fill="#cde2fb"/><circle cx="27.79" cy="21.00" r="1.32" fill="#cde2fb"/><circle cx="3.83" cy="20.31" r="1.33" fill="#cde2fb"/><circle cx="22.11" cy="4.51" r="1.34" fill="#cde2fb"/><circle cx="19.28" cy="28.70" r="1.36" fill="#f0904f"/><circle cx="4.92" cy="8.80" r="1.37" fill="#f0904f"/><circle cx="29.13" cy="13.81" r="1.38" fill="#f0904f"/><circle cx="7.74" cy="26.56" r="1.39" fill="#f0904f"/><circle cx="14.95" cy="2.54" r="1.41" fill="#f0904f"/><circle cx="25.94" cy="25.28" r="1.42" fill="#f0904f"/></svg><span class="mark-text">charts</span></a>
+    <div class="links">
+      <a href="./" class="active">Feed</a>
+      <a href="./about/">About</a>
+    </div>
+  </nav>
+
+  <header class="hero-stage">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <button class="hero-view" id="hero-view" aria-label="View the hero gallery full screen"
+      title="View the gallery">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor"
+        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9" />
+        <path d="M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9" />
+        <path d="M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15" />
+        <path d="M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15" />
+        <circle cx="12" cy="12" r="2.2" />
+      </svg>
+    </button>
+    <div class="hero-copy">
+      <p class="kicker">charts</p>
+      <h1>A visual feed of<br />the world's data.</h1>
+      <p class="down">↓ Start exploring</p>
+    </div>
+  </header>
+
+  <div class="social-layout">
+    <aside class="rail rail-left" id="rail-left">
+      <div class="rail-card">
+        <p class="rail-title">Channels</p>
+        <div id="channel-list"></div>
+      </div>
+    </aside>
+
+    <main class="feed-col">
+      <div class="feed" id="feed">
+
+        <article class="post" data-id="eclipses" data-channel="space" data-date="2026-08-08">
+          <a class="motif" id="motif-eclipses" href="./viz/eclipses/" aria-label="Totality is a thin ribbon — a century of the Moon's shadow on the globe"></a>
+          <div class="body">
+            <h2><a href="./viz/eclipses/">Totality is a thin ribbon</a></h2>
+            <p class="dek">The Moon's shadow falls on Earth often. The part of it that blots the
+              Sun out completely is a band a few hundred kilometres across, and it lands on any one
+              place rarely. Here are the 67 tabulated paths of this century on a globe you can
+              spin, drawn at NASA's real width rather than one thickened to be seen — thin almost
+              everywhere, flaring only where the shadow arrives at sunrise and leaves at sunset.
+              Play the century and they light in date order, ending on 12 August 2026: over
+              Greenland, clipping Iceland, out over Spain at sunset.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+        <article class="post" data-id="fires" data-channel="climate" data-date="2026-08-06">
+          <a class="motif" id="motif-fires" href="./viz/fires/" aria-label="Europe burns in bad years — 45 fire seasons stacked by country"></a>
+          <div class="body">
+            <h2><a href="./viz/fires/">Europe burns in bad years</a></h2>
+            <p class="dek">Forty-five fire seasons in the five Mediterranean countries EFFIS has
+              recorded without a break since 1980, stacked one year at a time. The shape is not a
+              slope, it is a skyline: ordinary summers have been getting smaller since the 1980s,
+              and the catastrophes have not moved — 1985 and 2017 still stand almost level. Pull a
+              country out of the stack and its own bad years step forward.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+        <article class="post" data-id="pulsars" data-channel="space" data-date="2026-08-03">
+          <a class="motif" id="motif-pulsars" href="./viz/pulsars/" aria-label="The sky is full of clocks — every measured pulsar blinking its real period"></a>
+          <div class="body">
+            <h2><a href="./viz/pulsars/">The sky is full of clocks</a></h2>
+            <p class="dek">Pulsars are the most precise natural clocks in the universe — dead
+              neutron stars sweeping a beam past Earth on a fixed period. Here is every one we've
+              measured, drawn on the galactic sky and blinking at its real spin: millisecond
+              pulsars flicker almost too fast to follow, second-long ones pulse slow and heavy.
+              Drag to keep only the fastest and the sky thins to the millisecond swarms.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="geostorms" data-channel="space" data-date="2026-08-02">
+          <a class="motif" id="motif-geostorms" href="./viz/geostorms/" aria-label="A century of storms hitting Earth — the Kp index since 1932"></a>
+          <div class="body">
+            <h2><a href="./viz/geostorms/">A century of storms hitting Earth</a></h2>
+            <p class="dek">The Sun's spots are one thing; the disturbance they hurl at us is
+              another. The planetary Kp index has logged Earth's geomagnetic weather every
+              three hours since 1932. Feel it through a compass needle: quiet years barely stir
+              it, the eleven-year cycle breathes in the baseline, and the great storms — the
+              1989 blackout, the 2003 Halloween storms, 2024's Gannon event — swing it to the pin
+              and flood the sky green.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+        <article class="post" data-id="tdf" data-channel="history" data-date="2026-07-28">
+          <a class="motif" id="motif-tdf" href="./viz/tdf/" aria-label="The Loop — 123 years of the Tour de France"></a>
+          <div class="body">
+            <h2><a href="./viz/tdf/">The Loop</a></h2>
+            <p class="dek">Every stage of every Tour de France since 1903, drawn as one route object.
+              Press play and the race writes itself across France — the early point-to-point giants
+              reaching clear across the country, the hexagon settling in through the middle century,
+              the modern loops that dart abroad for a Grand Départ. A hundred and twenty-three editions,
+              overlaid, become the shape of the race itself.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+        <article class="post" data-id="tornadoes" data-channel="weather" data-date="2026-07-26">
+          <a class="motif" id="motif-tornadoes" href="./viz/tornadoes/" aria-label="Seventy-five years of American tornadoes"></a>
+          <div class="body">
+            <h2><a href="./viz/tornadoes/">Seventy-five years of American tornadoes</a></h2>
+            <p class="dek">Every tornado NOAA logged since 1950 — more than 73,000 of them, each drawn
+              from touchdown to lift-off and colored by strength. Press play and three-quarters of a
+              century accretes: the haze of weak twisters, the deep-red spokes of the violent few, and
+              the shape of Tornado Alley emerging from the count.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="eruptions" data-channel="earth" data-date="2026-07-25">
+          <a class="motif" id="motif-eruptions" href="./viz/eruptions/" aria-label="Ten thousand years of eruptions"></a>
+          <div class="body">
+            <h2><a href="./viz/eruptions/">Ten thousand years of eruptions</a></h2>
+            <p class="dek">The planet is never quiet. Put every eruption the Smithsonian has a record
+              of on one map — colored and sized by explosivity — and press play, and the whole restless
+              Earth lights up through deep time: the gentle lava fields, and the handful of cataclysms
+              that darkened whole skies.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="sunspots" data-channel="space" data-date="2026-07-25">
+          <a class="motif" id="motif-sunspots" href="./viz/sunspots/" aria-label="The Sun draws butterflies"></a>
+          <div class="body">
+            <h2><a href="./viz/sunspots/">The Sun draws butterflies</a></h2>
+            <p class="dek">Plot sunspots by the latitude they appear at and a pattern nobody designed
+              comes out: every eleven years a cycle opens near 30°, marches to the equator, and dies
+              there as the next one opens above it. A century and a half of it, rotation by rotation.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="rivers" data-channel="earth" data-date="2026-07-25">
+          <a class="motif" id="motif-rivers" href="./viz/rivers/" aria-label="Rivers keep time"></a>
+          <div class="body">
+            <h2><a href="./viz/rivers/">Rivers keep time</a></h2>
+            <p class="dek">Six American rivers drawn as a single year each. The Willamette peaks in
+              January, the Yellowstone in June when the snowpack goes. And the Colorado below Glen
+              Canyon Dam barely has a year at all — we switched its seasons off in 1963.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="births" data-channel="history" data-date="2026-07-25">
+          <a class="motif" id="motif-births" href="./viz/births/" aria-label="The days nobody is born"></a>
+          <div class="body">
+            <h2><a href="./viz/births/">The days nobody is born</a></h2>
+            <p class="dek">Twenty-one years of American birth records on a calendar, with the weekend
+              effect divided out. Christmas Day runs 41% below an ordinary day, the 13th of the month
+              dips every time, and mid-September glows. Birth is scheduled now, and it shows.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="tides" data-channel="earth" data-date="2026-07-25">
+          <a class="motif" id="motif-tides" href="./viz/tides/" aria-label="The tide is not one thing"></a>
+          <div class="body">
+            <h2><a href="./viz/tides/">The tide is not one thing</a></h2>
+            <p class="dek">A year of tides at six American harbours, each day drawn as one petal on a
+              24-hour clock. Anchorage heaves eleven metres; Honolulu barely breathes. Same ocean,
+              same moon — completely different signatures.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="exoplanets" data-channel="space" data-date="2026-07-24">
+          <a class="motif" id="motif-exoplanets" href="./viz/exoplanets/" aria-label="Every world we've ever found"></a>
+          <div class="body">
+            <h2><a href="./viz/exoplanets/">Every world we've ever found</a></h2>
+            <p class="dek">Every confirmed planet beyond the Sun — 6,000-plus worlds on one
+              turning field, each orbiting at its true relative speed, placed by how long its
+              year is and colored by how we found it. The inner blur is our blind spot made visible.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="meteorites" data-channel="space" data-date="2026-07-19">
+          <a class="motif" id="motif-meteorites" href="./viz/meteorites/" aria-label="Everything that ever fell from the sky"></a>
+          <div class="body">
+            <h2><a href="./viz/meteorites/">Everything that ever fell from the sky</a></h2>
+            <p class="dek">Every meteorite humanity has ever recorded — 45,716 space rocks
+              on one map, sized by mass. The embers were seen falling; the rest were found
+              where people bothered to look.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="worldcup" data-channel="sport" data-date="2026-07-19">
+          <a class="motif" id="motif-worldcup" href="./viz/worldcup/" aria-label="Every World Cup goal"></a>
+          <div class="body">
+            <h2><a href="./viz/worldcup/">Every World Cup goal</a></h2>
+            <p class="dek">All 3,637 goals from 30 World Cups — men's and women's, 1930 to 2022 —
+              set on the minute they were scored. The swarm thickens toward every whistle.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+
+
+
+        <article class="post" data-id="storms" data-channel="weather" data-date="2026-07-19">
+          <a class="motif" id="motif-storms" href="./viz/storms/" aria-label="Forty-five years of hurricanes"></a>
+          <div class="body">
+            <h2><a href="./viz/storms/">Forty-five years of hurricanes</a></h2>
+            <p class="dek">Every tropical cyclone tracked since 1980, drawn as one glowing
+              atlas of storm paths — brighter where the wind blew harder.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="orbits" data-channel="space" data-date="2026-07-19">
+          <a class="motif" id="motif-orbits" href="./viz/orbits/" aria-label="Everything we've left in orbit"></a>
+          <div class="body">
+            <h2><a href="./viz/orbits/">Everything we've left in orbit</a></h2>
+            <p class="dek">All 33,000+ tracked objects circling Earth at their real altitudes,
+              each ring turning at its true orbital speed. Much of it is junk.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="nukes" data-channel="history" data-date="2026-07-19">
+          <a class="motif" id="motif-nukes" href="./viz/nukes/" aria-label="Every nuclear explosion"></a>
+          <div class="body">
+            <h2><a href="./viz/nukes/">Every nuclear explosion</a></h2>
+            <p class="dek">From Trinity to North Korea — 2,057 detonations as a swarm of
+              bubbles sized by yield. Watch the giants vanish underground after 1963.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="cables" data-channel="infrastructure" data-date="2026-07-18">
+          <a class="motif" id="motif-cables" href="./viz/cables/" aria-label="The internet is a wire under the ocean"></a>
+          <div class="body">
+            <h2><a href="./viz/cables/">The internet is a wire under the ocean</a></h2>
+            <p class="dek">All 717 submarine cables that carry the world's traffic, glowing
+              across the seafloor. Hover any fiber to learn its name.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="ukraine" data-channel="conflict" data-date="2026-07-18">
+          <a class="motif" id="motif-ukraine" href="./viz/ukraine/" aria-label="Eleven years of war in Ukraine"></a>
+          <div class="body">
+            <h2><a href="./viz/ukraine/">Eleven years of war in Ukraine</a></h2>
+            <p class="dek">Every violent event recorded by the Uppsala Conflict Data Program
+              since 2014. The Donbas line smolders for eight years — then 2022 happens.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="climate" data-channel="climate" data-date="2026-07-18">
+          <a class="motif" id="motif-climate" href="./viz/climate/" aria-label="The temperature spiral"></a>
+          <div class="body">
+            <h2><a href="./viz/climate/">The temperature spiral</a></h2>
+            <p class="dek">147 years of monthly global temperature drawn as one continuous
+              line circling the calendar — spiraling outward as the world warms.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="energy" data-channel="energy" data-date="2026-07-18">
+          <a class="motif" id="motif-energy" href="./viz/energy/" aria-label="How the world makes electricity"></a>
+          <div class="body">
+            <h2><a href="./viz/energy/">How the world makes electricity</a></h2>
+            <p class="dek">Forty years of global generation, layer by layer — the fossil base
+              that never shrinks, and the wind-and-solar wedge arriving fast on top.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="wind" data-channel="energy" data-date="2026-07-18">
+          <a class="motif" id="motif-wind" href="./viz/wind/" aria-label="Every wind turbine in America"></a>
+          <div class="body">
+            <h2><a href="./viz/wind/">Every wind turbine in America</a></h2>
+            <p class="dek">Four and a half decades of the US wind fleet, one glowing point per
+              machine. Scrub through time and watch it grow.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="quakes" data-channel="earth" data-date="2026-07-18">
+          <a class="motif" id="motif-quakes" href="./viz/quakes/" aria-label="The planet is always moving"></a>
+          <div class="body">
+            <h2><a href="./viz/quakes/">The planet is always moving</a></h2>
+            <p class="dek">Every earthquake of magnitude 1+ from the last 30 days, sized by
+              energy, colored by depth. Refreshed daily — never the same twice.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-id="launches" data-channel="space" data-date="2026-07-18">
+          <a class="motif" id="motif-launches" href="./viz/launches/" aria-label="Every ride to orbit"></a>
+          <div class="body">
+            <h2><a href="./viz/launches/">Every ride to orbit</a></h2>
+            <p class="dek">All 7,100+ orbital launch attempts since Sputnik, one square each —
+              the Cold War wall, the quiet 90s, the commercial explosion at the edge.</p>
+            <div class="post-footer">
+              <span class="actions"></span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <p class="feed-empty" id="feed-empty" hidden>Nothing in this channel yet.</p>
+    </main>
+
+    <aside class="rail rail-right" id="rail-right">
+      <div class="rail-card">
+        <p class="rail-title">Recent</p>
+        <div id="now-stats"></div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer" style="max-width:1160px;margin:0 auto;padding:30px 28px 40px">
+    <span>Data: USGS · NOAA · NASA · GCAT · UCDP · OWID · CelesTrak · TeleGeography · SIPRI · Meteoritical Society</span>
+    <span>New posts daily · <a href="./about/">about charts</a></span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+</body>
+</html>

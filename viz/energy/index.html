@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How the world makes electricity — charts</title>
+  <meta name="description" content="Forty years of world electricity generation by source, coal to solar, as one flowing stacked chart. OWID data." />
+  <link rel="icon" href="../../favicon.svg" />
+  <style>
+    #chart { display: block; width: 100%; height: 100%; }
+  </style>
+  <script type="module" crossorigin src="../../assets/energy-ssyglw7d.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="modulepreload" crossorigin href="../../assets/src-Dtm4SC7r.js">
+  <link rel="modulepreload" crossorigin href="../../assets/linear-BEI9va8C.js">
+  <link rel="modulepreload" crossorigin href="../../assets/panel-CUN4vD98.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-BoNt4oFf.css">
+  <link rel="canonical" href="https://charts.thrain.ai/viz/energy/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="charts">
+  <meta property="og:url" content="https://charts.thrain.ai/viz/energy/">
+  <meta property="og:title" content="How the world makes electricity">
+  <meta property="og:description" content="Forty years of global generation, layer by layer — the fossil base that never shrinks, and the wind-and-solar wedge arriving fast on top.">
+  <meta property="og:image" content="https://charts.thrain.ai/og/energy.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How the world makes electricity">
+  <meta name="twitter:description" content="Forty years of global generation, layer by layer — the fossil base that never shrinks, and the wind-and-solar wedge arriving fast on top.">
+  <meta name="twitter:image" content="https://charts.thrain.ai/og/energy.png">
+  <link rel="alternate" type="application/rss+xml" title="charts — new posts" href="https://charts.thrain.ai/feed.xml">
+  <meta property="article:published_time" content="2026-07-18">
+  <meta property="article:section" content="energy">
+  <meta name="description" content="Forty years of global generation, layer by layer — the fossil base that never shrinks, and the wind-and-solar wedge arriving fast on top.">
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="../../"><svg class="mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="charts"><circle cx="16.00" cy="16.00" r="0.52" fill="#256abf"/><circle cx="14.81" cy="17.09" r="0.53" fill="#256abf"/><circle cx="16.20" cy="13.73" r="0.55" fill="#256abf"/><circle cx="17.70" cy="18.22" r="0.56" fill="#256abf"/><circle cx="12.82" cy="15.44" r="0.57" fill="#256abf"/><circle cx="19.05" cy="14.06" r="0.58" fill="#256abf"/><circle cx="14.97" cy="19.82" r="0.60" fill="#256abf"/><circle cx="14.03" cy="12.21" r="0.61" fill="#256abf"/><circle cx="20.29" cy="17.57" r="0.62" fill="#256abf"/><circle cx="11.52" cy="17.85" r="0.63" fill="#256abf"/><circle cx="18.16" cy="11.38" r="0.65" fill="#256abf"/><circle cx="17.60" cy="21.11" r="0.66" fill="#256abf"/><circle cx="11.16" cy="13.20" r="0.67" fill="#256abf"/><circle cx="21.68" cy="14.75" r="0.68" fill="#256abf"/><circle cx="12.53" cy="20.94" r="0.70" fill="#256abf"/><circle cx="15.20" cy="9.80" r="0.71" fill="#3987e5"/><circle cx="20.94" cy="20.16" r="0.72" fill="#3987e5"/><circle cx="9.35" cy="16.27" r="0.74" fill="#3987e5"/><circle cx="20.85" cy="11.17" r="0.75" fill="#3987e5"/><circle cx="15.68" cy="23.03" r="0.76" fill="#3987e5"/><circle cx="11.38" cy="10.46" r="0.77" fill="#3987e5"/><circle cx="23.33" cy="16.99" r="0.79" fill="#3987e5"/><circle cx="9.79" cy="20.32" r="0.80" fill="#3987e5"/><circle cx="17.70" cy="8.45" r="0.81" fill="#3987e5"/><circle cx="19.93" cy="22.86" r="0.82" fill="#3987e5"/><circle cx="8.31" cy="13.55" r="0.84" fill="#3987e5"/><circle cx="23.47" cy="12.55" r="0.85" fill="#3987e5"/><circle cx="12.76" cy="23.74" r="0.86" fill="#3987e5"/><circle cx="13.11" cy="7.96" r="0.87" fill="#3987e5"/><circle cx="23.69" cy="20.04" r="0.89" fill="#5598e7"/><circle cx="7.45" cy="18.25" r="0.90" fill="#5598e7"/><circle cx="20.86" cy="8.44" r="0.91" fill="#5598e7"/><circle cx="17.55" cy="25.00" r="0.93" fill="#5598e7"/><circle cx="8.67" cy="10.32" r="0.94" fill="#5598e7"/><circle cx="25.38" cy="15.22" r="0.95" fill="#5598e7"/><circle cx="9.52" cy="23.01" r="0.96" fill="#5598e7"/><circle cx="16.05" cy="6.32" r="0.98" fill="#5598e7"/><circle cx="22.60" cy="23.27" r="0.99" fill="#5598e7"/><circle cx="6.09" cy="15.08" r="1.00" fill="#5598e7"/><circle cx="24.03" cy="9.91" r="1.01" fill="#5598e7"/><circle cx="14.17" cy="26.04" r="1.03" fill="#5598e7"/><circle cx="10.50" cy="7.25" r="1.04" fill="#5598e7"/><circle cx="26.09" cy="18.76" r="1.05" fill="#5598e7"/><circle cx="6.58" cy="20.83" r="1.07" fill="#86b6ef"/><circle cx="19.72" cy="5.96" r="1.08" fill="#86b6ef"/><circle cx="20.08" cy="26.03" r="1.09" fill="#86b6ef"/><circle cx="6.11" cy="11.31" r="1.10" fill="#86b6ef"/><circle cx="26.57" cy="12.74" r="1.12" fill="#86b6ef"/><circle cx="10.35" cy="25.65" r="1.13" fill="#86b6ef"/><circle cx="13.63" cy="4.95" r="1.14" fill="#86b6ef"/><circle cx="25.30" cy="22.61" r="1.15" fill="#86b6ef"/><circle cx="4.56" cy="17.43" r="1.17" fill="#86b6ef"/><circle cx="23.54" cy="7.14" r="1.18" fill="#86b6ef"/><circle cx="16.43" cy="27.74" r="1.19" fill="#86b6ef"/><circle cx="7.67" cy="7.55" r="1.20" fill="#86b6ef"/><circle cx="27.95" cy="16.61" r="1.22" fill="#86b6ef"/><circle cx="6.69" cy="23.69" r="1.23" fill="#86b6ef"/><circle cx="17.68" cy="3.93" r="1.24" fill="#cde2fb"/><circle cx="22.97" cy="26.12" r="1.26" fill="#cde2fb"/><circle cx="3.92" cy="13.22" r="1.27" fill="#cde2fb"/><circle cx="26.88" cy="9.84" r="1.28" fill="#cde2fb"/><circle cx="12.11" cy="27.99" r="1.29" fill="#cde2fb"/><circle cx="10.73" cy="4.44" r="1.31" fill="#cde2fb"/><circle cx="27.79" cy="21.00" r="1.32" fill="#cde2fb"/><circle cx="3.83" cy="20.31" r="1.33" fill="#cde2fb"/><circle cx="22.11" cy="4.51" r="1.34" fill="#cde2fb"/><circle cx="19.28" cy="28.70" r="1.36" fill="#f0904f"/><circle cx="4.92" cy="8.80" r="1.37" fill="#f0904f"/><circle cx="29.13" cy="13.81" r="1.38" fill="#f0904f"/><circle cx="7.74" cy="26.56" r="1.39" fill="#f0904f"/><circle cx="14.95" cy="2.54" r="1.41" fill="#f0904f"/><circle cx="25.94" cy="25.28" r="1.42" fill="#f0904f"/></svg><span class="mark-text">charts</span></a>
+    <div class="links">
+      <a href="../../">Feed</a>
+      <a href="../../about/">About</a>
+    </div>
+  </nav>
+
+  <div class="viz-stage" id="stage"><svg id="chart"></svg></div>
+
+  <aside class="panel">
+    <p class="kicker">Energy</p>
+    <h1>How the world makes electricity</h1>
+    <p class="dek">Forty years of global generation, layer by layer — the brown-red
+      base of fossil fuel that never stops growing, and the blue-and-gold wedge of
+      wind and solar arriving fast at the top. Tap or hover for any year.</p>
+    <div class="chips" id="chips" style="margin:10px 0 12px"></div>
+    <details class="data-table">
+      <summary>Data &amp; source</summary>
+      <p class="source">Data: <a href="https://github.com/owid/energy-data" target="_blank"
+      rel="noopener">Our World in Data</a> · Ember &amp; Energy Institute · TWh per year ·
+      generation, not capacity · "other renewables" = biofuel + geothermal ·
+      updated <span id="updated">—</span></p>
+      <div style="overflow-x:auto"><table id="data-table-el"></table></div>
+    </details>
+  </aside>
+
+  <div class="tooltip" id="tooltip"></div>
+</body>
+</html>
